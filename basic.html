@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width"/>
+  
+  <!-- this is a copy of Zurb Ink's demo template, modified to be used on Beemailer -->
+  <!-- see comments! -->
+
+  <!-- include any external CSS that will be automatically inlined -->
+  <!-- here we include the Ink framework CSS -->
+  <link rel="stylesheet" href="ink.css" />
+
+  <!-- some demo styles -->
+  <style>
+    table.facebook td {
+      background: #3b5998;
+      border-color: #2d4473;
+    }
+
+    table.facebook:hover td {
+      background: #2d4473 !important;
+    }
+
+    table.twitter td {
+      background: #00acee;
+      border-color: #0087bb;
+    }
+
+    table.twitter:hover td {
+      background: #0087bb !important;
+    }
+
+    table.google-plus td {
+      background-color: #DB4A39;
+      border-color: #CC0000;
+    }
+
+    table.google-plus:hover td {
+      background: #CC0000 !important;
+    }
+
+    .template-label {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .callout .panel {
+      background: #ECF8FF;
+      border-color: #b9e5ff;
+    }
+
+    .header {
+      background: #999999;
+    }
+
+    .footer .wrapper {
+      background: #ebebeb;
+    }
+
+    .footer h5 {
+      padding-bottom: 10px;
+    }
+
+    table.columns .text-pad {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    table.columns .left-text-pad {
+      padding-left: 10px;
+    }
+
+    table.columns .right-text-pad {
+      padding-right: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      table[class="body"] .right-text-pad {
+        padding-left: 10px !important;
+      }
+
+      table[class="body"] .left-text-pad {
+        padding-right: 10px !important;
+      }
+    }
+    
+    /* add any extra styles here, or add another <style> element */
+
+  </style>
+</head>
+<body>
+  <table class="body">
+    <tr>
+      <td class="center" align="center" valign="top">
+        <center>
+
+          <table class="row header">
+            <tr>
+              <td class="center" align="center">
+                <center>
+
+                  <table class="container">
+                    <tr>
+                      <td class="wrapper last">
+
+                        <table class="twelve columns">
+                          <tr>
+                            <td class="six sub-columns">
+
+                              <!-- use the bm-model attribute to make an element editable -->
+                              <!-- add width and height attributes to set default values -->
+                              <img bm-model="header_img" />
+
+                            </td>
+                            <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
+
+                              <!-- this is a textual editable field -->
+                              <span class="template-label" bm-model="header_txt">BASIC</span>
+
+                            </td>
+                            <td class="expander"></td>
+                          </tr>
+                        </table>
+
+                      </td>
+                    </tr>
+                  </table>
+
+                </center>
+              </td>
+            </tr>
+          </table>
+
+          <table class="container">
+            <tr>
+              <td>
+                
+                <table class="row">
+                  <tr>
+                    <td class="wrapper last">
+
+                      <table class="twelve columns">
+                        <tr>
+
+                          <!-- one of the most important features: repeaters! -->
+                          <!-- use bm-repeat to create a repeater element, which allows the user to add all the elements he needs -->
+                          <!-- you can define different layouts to be used inside repeaters, see bm-layout below -->
+
+                          <td bm-repeat="repeater">
+                            
+                            <!-- define multiple layouts by using bm-layout on child elements of bm-repeat -->
+                            <!-- users will be able to select the desired layout using a dropdown menu -->
+                            <!-- if you don't provide layouts, the first child element will be used as the only layout -->
+                            <div bm-layout="title">
+                              <h1 bm-model="title">Hi, Susan Calvin</h1>
+                            </div>
+                            
+                            <div bm-layout="text">
+
+                              <!-- this is a variant of the default editable field: add richeditor="1" to enable WYSIWYG editor -->
+                              <div bm-model="text" richeditor="1"></div>  
+
+                            </div>
+
+                            <div bm-layout="one_image">
+                              <img width="580" height="300" bm-model="image1">
+                            </div>
+
+                            <div bm-layout="two_images">
+                              <table>
+                                <tr>
+                                  <td><img width="290" height="300" bm-model="image1"></td>
+                                  <td><img width="290" height="300" bm-model="image2"></td>
+                                </tr>
+                              </table>
+                            </div>
+
+                            <div bm-layout="three_images">
+                              <table>
+                                <tr>
+                                  <td><img width="193" height="300" bm-model="image1"></td>
+                                  <td><img width="193" height="300" bm-model="image2"></td>
+                                  <td><img width="193" height="300" bm-model="image3"></td>
+                                </tr>
+                              </table>
+                            </div>
+
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+                <table class="row footer">
+                  <tr>
+                    <td class="wrapper">
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="left-text-pad">
+
+                            <h5>Connect With Us:</h5>
+
+                            <table class="tiny-button facebook">
+                              <tr>
+                                <td>
+                                  <a href="#">Facebook</a>
+                                </td>
+                              </tr>
+                            </table>
+
+                            <br>
+
+                            <table class="tiny-button twitter">
+                              <tr>
+                                <td>
+                                  <a href="#">Twitter</a>
+                                </td>
+                              </tr>
+                            </table>
+
+                            <br>
+
+                            <table class="tiny-button google-plus">
+                              <tr>
+                                <td>
+                                  <a href="#">Google +</a>
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                    <td class="wrapper last">
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="last right-text-pad">
+                            <h5>Contact Info:</h5>
+                            <p>Phone: 408.341.0600</p>
+                            <p>Email: <a href="mailto:hseldon@trantor.com">hseldon@trantor.com</a></p>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+
+                <table class="row">
+                  <tr>
+                    <td class="wrapper last">
+
+                      <table class="twelve columns">
+                        <tr>
+                          <td align="center">
+                            <center>
+
+                              <!-- the [[unsubscribe]] link is required, please insert it -->
+                              <p style="text-align:center;"><a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="[[unsubscribe]]">Unsubscribe</a></p>
+                            </center>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+        </center>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
